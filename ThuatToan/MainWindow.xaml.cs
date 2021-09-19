@@ -21,9 +21,12 @@ namespace ThuatToan
     /// </summary>
     public partial class MainWindow : Window
     {
+        int Number;
         double[] array;
         double countWidth = 0;
         Random rand = new Random();
+
+
         public MainWindow()
         {
             InitializeComponent();
@@ -32,7 +35,7 @@ namespace ThuatToan
 
         private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
         {
-            Regex regex = new Regex("[^0-9]+");
+            Regex regex = new Regex("[^0-9]");
             e.Handled = regex.IsMatch(e.Text);
         }
 
@@ -57,11 +60,27 @@ namespace ThuatToan
 
         private void btnRandom_Click(object sender, RoutedEventArgs e)
         {
-            canvas1.Children.Clear();
+            random();
+        }
+
+        private void NumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+           if(NumberTextBox.Text != " " && !string.IsNullOrEmpty(NumberTextBox.Text)) {sliderNumber.Value = Convert.ToDouble(NumberTextBox.Text);}
+        }
+
+        private void sliderNumber_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            Number = Convert.ToInt32(sliderNumber.Value);
+            random();
+        }
+
+        void random()
+        {
+            if (canvas1 != null) {canvas1.Children.Clear();}
             countWidth = 0;
             int maxWidth = 1161;
             int maxHieght = 500;
-            int Number = Convert.ToInt32(sliderNumber.Value);
+            //int Number = Convert.ToInt32(sliderNumber.Value);
             array = new double[Number];
             for (int i = 0; i < array.Length; i++)
             {
@@ -86,7 +105,6 @@ namespace ThuatToan
                 canvas1.Children.Add(rtgNext);
                 countWidth = countWidth + (maxWidth / (double)Number);
             }
-            
         }
 
         //private void create()
