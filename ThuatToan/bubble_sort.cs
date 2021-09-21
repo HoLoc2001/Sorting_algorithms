@@ -26,17 +26,6 @@ namespace ThuatToan
                     }
                 }
             }
-            for (int i = 0; i < arr.Length; i++)
-            {
-                //Rectangle rtgNext = new Rectangle();
-                //rtgNext.Width = maxWidth / Number;
-                //rtgNext.Height = arr[i];
-                //rtgNext.Fill = new SolidColorBrush(Colors.Black);
-                //Canvas.SetLeft(rtgNext, countWidth);
-                //Canvas.SetBottom(rtgNext, 0);
-                //canvas1.Children.Add(rtgNext);
-                //countWidth = countWidth + (maxWidth / (double)Number);
-            }
             return arr;
         }
     }

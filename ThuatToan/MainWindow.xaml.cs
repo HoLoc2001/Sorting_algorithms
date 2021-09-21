@@ -74,9 +74,17 @@ namespace ThuatToan
             random();
         }
 
+        
+
+        private void btnSort_Click(object sender, RoutedEventArgs e)
+        {
+            bubble_sort.Bubble_sort(array);
+            sorted();
+        }
+
         void random()
         {
-            if (canvas1 != null) {canvas1.Children.Clear();}
+            if (canvas1 != null) { canvas1.Children.Clear(); }
             countWidth = 0;
             int maxWidth = 1161;
             int maxHieght = 500;
@@ -106,22 +114,22 @@ namespace ThuatToan
                 countWidth = countWidth + (maxWidth / (double)Number);
             }
         }
-
-        private void btnReset_Click(object sender, RoutedEventArgs e)
+        void sorted()
         {
-        //    bubble_sort.Bubble_sort(array);
+            if (canvas1 != null) { canvas1.Children.Clear(); }
+            countWidth = 0;
+            int maxWidth = 1161;
+            for (int i = 0; i < array.Length; i++)
+            {
+                Rectangle rtgNext = new Rectangle();
+                rtgNext.Width = maxWidth / Number;
+                rtgNext.Height = array[i];
+                rtgNext.Fill = new SolidColorBrush(Colors.Black);
+                Canvas.SetLeft(rtgNext, countWidth);
+                Canvas.SetBottom(rtgNext, 0);
+                canvas1.Children.Add(rtgNext);
+                countWidth = countWidth + (maxWidth / (double)Number);
+            }
         }
-
-        //private void create()
-        //{
-        //    Rectangle rtgNext = new Rectangle();
-        //    rtgNext.Width = 10;
-        //    rtgNext.Height = 240;
-        //    rtgNext.Fill = new SolidColorBrush(Colors.Black);
-        //    Canvas.SetLeft(rtgNext, countWidth);
-        //    Canvas.SetBottom(rtgNext, 0);
-        //    canvas1.Children.Add(rtgNext);
-        //    countWidth = countWidth + 10;
-        //}
     }
 }
