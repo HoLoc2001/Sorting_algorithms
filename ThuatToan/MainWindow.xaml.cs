@@ -43,19 +43,19 @@ namespace ThuatToan
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            //int a = 0;
-            ////create();
-            //for (int i = 0; i < array.Length - 1; ++i)
-            //{
-            //    for (int j = i + 1; j < array.Length; ++j)
-            //    {
-            //        if (array[i] == array[j])
-            //        {
-            //            a += 1;
-            //        }
-            //    }
-            //}
-            //MessageBox.Show(a.ToString());
+            int a = 0;
+            //create();
+            for (int i = 0; i < array.Length - 1; ++i)
+            {
+                for (int j = i + 1; j < array.Length; ++j)
+                {
+                    if (array[i] == array[j])
+                    {
+                        a += 1;
+                    }
+                }
+            }
+            MessageBox.Show(a.ToString());
         }
 
         private void btnRandom_Click(object sender, RoutedEventArgs e)
@@ -65,7 +65,7 @@ namespace ThuatToan
 
         private void NumberTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-           if(NumberTextBox.Text != " " && !string.IsNullOrEmpty(NumberTextBox.Text)) {sliderNumber.Value = Convert.ToDouble(NumberTextBox.Text);}
+           if(NumberTextBox.Text != " " && !string.IsNullOrEmpty(NumberTextBox.Text) && double.TryParse(NumberTextBox.Text, out double b)) {sliderNumber.Value = Convert.ToDouble(NumberTextBox.Text);}
         }
 
         private void sliderNumber_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
@@ -105,6 +105,11 @@ namespace ThuatToan
                 canvas1.Children.Add(rtgNext);
                 countWidth = countWidth + (maxWidth / (double)Number);
             }
+        }
+
+        private void btnReset_Click(object sender, RoutedEventArgs e)
+        {
+        //    bubble_sort.Bubble_sort(array);
         }
 
         //private void create()
