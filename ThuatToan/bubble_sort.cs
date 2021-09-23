@@ -9,7 +9,7 @@ using System.Windows.Media;
 
 namespace ThuatToan
 {
-    class bubble_sort
+    public class bubble_sort
     {
         public static Array Bubble_sort(double[] arr)
         {

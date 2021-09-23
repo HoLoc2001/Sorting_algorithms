@@ -8,7 +8,7 @@
         Title="MainWindow" Height="650" Width="1200" Foreground="#FF930F0F" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize">
     <Grid>
         <Grid>
-            <Slider x:Name="sliderNumber" Minimum="0" Maximum="116" Margin="10,10,1000,579" IsSnapToTickEnabled="True" ValueChanged="sliderNumber_ValueChanged"/>
+            <Slider x:Name="sliderNumber" Minimum="0" Maximum="1160" Margin="10,10,1000,579" IsSnapToTickEnabled="True" ValueChanged="sliderNumber_ValueChanged"/>
             <TextBox x:Name="NumberTextBox" Margin="228,10,920.667,579" PreviewTextInput="NumberValidationTextBox" Text="{Binding Path=Value, ElementName=sliderNumber, Mode=OneWay}" TextChanged="NumberTextBox_TextChanged" />
             <Button x:Name="btnReset" Content="Sort" Margin="681,5,416.667,579" Click="btnSort_Click"/>
             <Button x:Name="btnAdd" Margin="481,5,565,579" Content="Add" Click="btnAdd_Click"/>
@@ -20,7 +20,7 @@
             </ComboBox>
         </Grid>
 
-        <Canvas x:Name="canvas1" Margin="10,50,15.667,10" Background="#ccc">
+        <Canvas x:Name="canvas1" Margin="10,50,14,10" Background="#ccc">
             <!--<Rectangle x:Name="cot1"
                 Width="10"
                 Height="300"

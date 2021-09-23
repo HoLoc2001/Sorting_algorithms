@@ -44,7 +44,6 @@ namespace ThuatToan
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             int a = 0;
-            //create();
             for (int i = 0; i < array.Length - 1; ++i)
             {
                 for (int j = i + 1; j < array.Length; ++j)
@@ -74,7 +73,6 @@ namespace ThuatToan
             random();
         }
 
-        
 
         private void btnSort_Click(object sender, RoutedEventArgs e)
         {
@@ -86,18 +84,18 @@ namespace ThuatToan
         {
             if (canvas1 != null) { canvas1.Children.Clear(); }
             countWidth = 0;
-            int maxWidth = 1161;
-            int maxHieght = 500;
+            int maxWidth = 1160;
+            int maxHieght = 550;
             //int Number = Convert.ToInt32(sliderNumber.Value);
             array = new double[Number];
             for (int i = 0; i < array.Length; i++)
             {
                 while (true)
                 {
-                    int intrand = rand.Next(1, maxHieght);
-                    if (!array.Contains(intrand))
+                    double int_rand = rand.NextDouble() + rand.Next(1, maxHieght);
+                    if (!array.Contains(int_rand))
                     {
-                        array[i] = intrand;
+                        array[i] = int_rand;
                         break;
                     }
                 }
@@ -130,6 +128,12 @@ namespace ThuatToan
                 canvas1.Children.Add(rtgNext);
                 countWidth = countWidth + (maxWidth / (double)Number);
             }
+        }
+        public void start_Swap_color(Rectangle item1, Rectangle item2)
+        {
+            item1.Fill = new SolidColorBrush(Colors.Blue);
+            item2.Fill = new SolidColorBrush(Colors.Blue);
+
         }
     }
 }

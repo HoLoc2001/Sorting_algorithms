@@ -1,12 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Media;
 
 namespace ThuatToan
 {
-    class Swap_color
+    public class Swap_color
     {
+        
+        
     }
 }
